@@ -30,11 +30,3 @@ const Nav = () => {
 
 export default Nav;
 
-
-// import React from 'react';
-// import { FaBeer } from 'react-icons/fa';
-// const Nav = () =>{
-//   return <h3> Lets go for a <FaBeer />? </h3>
-// }
-
-// export default Nav;

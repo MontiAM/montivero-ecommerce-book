@@ -2,6 +2,8 @@ import './App.css';
 import Nav from './Components/Nav/Nav'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 
+import ModalContainer from './Components/ModalContainer/ModalContainer';
+
 function App() {
   return (
     <>
@@ -9,6 +11,7 @@ function App() {
         <Nav/>
       </header>
       <ItemListContainer/>
+      <ModalContainer content={<div>Hola Mundo</div>}/>
     </>
     
   );
