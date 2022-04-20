@@ -1,6 +1,9 @@
 .body {
+    position: relative;
     top: 100px;
-    background-color: #fff;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background-color: rgb(224, 213, 213);
     margin: 0;
     padding: 0;
     width: auto;

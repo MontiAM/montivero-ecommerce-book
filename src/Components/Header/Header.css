@@ -1,12 +1,11 @@
-/* .header-app {
+.header-app {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    background-image: url('./img/pexels-pixabay-159711.jpg');
+    background-image: url('../../img/nav-background.jpg');
     background-size: cover;
-    background-color: #cabca9;
+    /* background-color: #cabca9; */
     box-shadow: 0 1px 4px rgba(146, 161, 176, .15);
-} */
-
+}

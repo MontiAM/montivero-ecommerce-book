@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 function CardWidget({items}) {
   return (
     <div className='card__widget'>
-        <div id="card-widget"><FaShoppingCart/>{items}</div>
+        <div id="card-widget"><a href="#" ><FaShoppingCart/>{items}</a></div>
     </div>
   )
 }
