@@ -1,10 +1,12 @@
 import React from 'react'
 import './ListCart.css'
 
-function ListCart() {
+
+function ListCart({titleh2}) {
+
   return (
     <div className='cart'>
-        <h2 className='cart__title'>Seleccion de libros</h2>
+        <h2 className='cart__title'>{titleh2}</h2>
     </div>
   )
 }
