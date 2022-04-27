@@ -1,9 +1,11 @@
-.body {
-    position: relative;
-    width: 100vw;
-    height:100vh;
+.items-list-container {
+    position: absolute;
+    top: 100px;
+    height: calc(100vh - 100px);
+    width: 100%;
     background-color: rgb(224, 213, 213);
     margin: 0;
-    padding: 0;
-    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
