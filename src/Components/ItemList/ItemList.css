@@ -1,26 +1,8 @@
 .item-list {
-    width: 250px;
-    height: 300px;
-    border: 1px solid #fff;
-    border-radius: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: #fff;
-    font-size: 25px;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
 }
-
-.item-list h1 {
-    font-size: 25px;
-    text-align: center;
-}
-
-.item-list-handelers {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    font-weight: bold;
-}
-
