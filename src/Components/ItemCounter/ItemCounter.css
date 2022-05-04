@@ -1,0 +1,59 @@
+.item-handelers {
+    width: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.item-handelers-buttons{
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-counter {
+    cursor: pointer;
+    border: none;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    /* border-radius: 2px solid #fff; */
+    background-color: #6b5245;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    transition: 2s ease all;
+}
+
+.button-counter:hover {
+    color: rgb(120, 115, 115);
+    box-shadow: 0px 0 7px 0 #000;
+}
+
+.item-handelers p {
+    font-size: 30px;
+}
+
+.icon {
+    margin: 0;
+    padding: 5px;
+}
+
+.button-addCart {
+    background-color: rgb(224, 213, 213);
+    border: 1px solid #6b5245;
+    height: 50px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 2s ease all;
+}
+
+.button-addCart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0 7px 0 #000;
+}

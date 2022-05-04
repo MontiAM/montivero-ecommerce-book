@@ -1,8 +1,8 @@
-// import { useState, useEffect } from 'react'
-import ItemList from '../ItemList/ItemList'
-import './ItemListContainer.css'
+import React, { useState, useEffect } from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import './ItemDetailContainer.css'
 
-function ItemListContainer() {
+function ItemDetailContainer() {
 
   const PRODUCTOS = [
     {
@@ -11,7 +11,7 @@ function ItemListContainer() {
       src:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fpics.filmaffinity.com%2FEl_se_or_de_los_anillos_La_comunidad_del_anillo-744631610-large.jpg&imgrefurl=https%3A%2F%2Fwww.filmaffinity.com%2Fes%2Ffilm750283.html&tbnid=nLVsHXoqE5eYFM&vet=12ahUKEwjq-aS76bf3AhXNRLgEHSApAY8QMygAegUIARDTAQ..i&docid=6iPrzf5Y7OMSVM&w=841&h=1200&q=el%20se%C3%B1or%20de%20los%20anillos&ved=2ahUKEwjq-aS76bf3AhXNRLgEHSApAY8QMygAegUIARDTAQ", 
       stock:"6", 
       price: "600", 
-      description: "Libro sobre...."},
+      description: "Tres Anillos para los Reyes Elfos bajo el cielo. Siete para los Señores Enanos en casas de piedra. Nueve para los Hombres Mortales condenados a morir. Uno para el Señor Oscuro, sobre el trono oscuro en la Tierra de Mordor donde se extienden las Sombras. Un Anillo para gobernarlos a todos. Un Anillo para encontrarlos, un Anillo para atraerlos a todos y atarlos en las tinieblas en la Tierra de Mordor donde se extienden las Sombras"},
   {
       id: "2", 
       title: "El Hobbit",
@@ -49,7 +49,7 @@ function ItemListContainer() {
       description: "Libro sobre...."}
   ]
 
-  const bringProducts = (PRODUCTOS) => {
+  const importProducts = (PRODUCTOS) => {
     const myPromise = new Promise( (resolve, reject) => {
       setTimeout( () => {
         resolve(PRODUCTOS)
@@ -58,28 +58,22 @@ function ItemListContainer() {
     return myPromise
   }
 
-// --------------------------------------------
-  // const [products, setProducts] = useState([])
+  const [product, setProducts] = useState([])
 
-  // useEffect( () => {
-  //   bringProducts()
-  //    .then( products => {
-  //         console.log('carga correcta');
-  //         setProducts(products)
-  //     } )
-  //     .catch( err => {
-  //       console.log('error en la carga');
-  //       console.log(err)
-  //     })
-  // }, [])
-// --------------------------------------------
-  
+  useEffect( () => {
+    importProducts(PRODUCTOS)
+      .then( res => {
+        setProducts(res[0]);
+      })
+  }, [])
+
   return (
-    <div className='items-list-container'>
-      <ItemList bringProducts={bringProducts} listProducts={PRODUCTOS}/>
+    <div className='ItemDetailContainer'>
+        { 
+          <ItemDetail firstProduct={product}/>
+        }
     </div>
   )
 }
 
-
-export default ItemListContainer
+export default ItemDetailContainer
