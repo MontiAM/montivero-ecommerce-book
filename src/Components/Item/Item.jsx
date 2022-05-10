@@ -1,34 +1,21 @@
-import React, { useState } from 'react'
-import { FaPlus, FaMinus } from "react-icons/fa";
+import React from 'react'
 import Button from '../Button/Button';
+import ItemCounter from '../ItemCounter/ItemCounter';
 import './Item.css'
 
-function Item(product) {
-
-    const [counter, setCounter] = useState(product.stock)
-    const onAdd = () => {
-        if (counter < product.stock) {
-        setCounter(counter + 1)
-    }
-    }
-    const onLes = () => {
-        if (counter > 0) {
-            setCounter(counter - 1)
-        }
-    }
+function Item({product}) {
 
   return (
     <div className='item'>
         <img src={product.src} alt="img libro" className='img'/>
         <div className='item-contain'>
-            <h1>{product.title}</h1>
-            <div className='item-price'>${product.price}</div> 
-            <div className='item-handelers'>
-                <a href="#" onClick={onAdd}><FaPlus/></a>
-                <p>{counter}</p>
-                <a href="#" onClick={onLes}><FaMinus/></a>
+            <div>
+                <h1>{product.title}</h1>
+                <div className='item-price'>${product.price}
+                </div> 
             </div>
-            <Button boton="Descripción"/>
+            <Button boton="Descripción" id={product.id}/>
+            <ItemCounter stock={product.stock}/>
         </div>
     </div>
   )

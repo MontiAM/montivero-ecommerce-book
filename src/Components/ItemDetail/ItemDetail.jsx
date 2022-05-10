@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCounter from '../ItemCounter/ItemCounter'
 import './ItemDetail.css'
 
-function ItemDetail({firstProduct}) {
+function ItemDetail({productID}) {
+
+  const [ product, setProduct ] = useState(productID)
 
   return (
     <div className='ItemDetail'>
         <div className='ItemDetail-section'>
-            <img src={firstProduct.src} alt={`imagen ${firstProduct.title}`} />
+            <img src={product.src} alt={`imagen ${product.title}`} />
         </div>
         <div className='ItemDetail-section info'>
             <div className='ItemDetail-section-data'>
-                <h2>{firstProduct.title}</h2>
-                <p>{firstProduct.description}</p>
-                <h3>Precio: ${firstProduct.price}</h3>
+                <h2>{product.title}</h2>
+                <p>{product.description}</p>
+                <h3>Precio: ${product.price}</h3>
             </div>    
-            <ItemCounter stock={firstProduct.stock}/>    
+            <ItemCounter stock={product.stock}/>    
         </div>
     </div>
   )

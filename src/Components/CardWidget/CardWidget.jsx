@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import './CardWidget.css'
 import { FaShoppingCart } from "react-icons/fa";
-import ListCart from '../ListCart/ListCart';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
+
 
 function CardWidget({items}) {
 

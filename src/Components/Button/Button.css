@@ -1,9 +1,10 @@
 .button {
+    height: auto;
     cursor: pointer;
     color: #fff;
     font-weight: bold;
     line-height: 20px;
-    margin: 5px;
+    /* margin: 5px; */
     padding: 10px 20px;
     font-size: 15px;
     background-color: #140606;

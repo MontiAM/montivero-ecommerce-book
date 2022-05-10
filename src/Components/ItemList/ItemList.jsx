@@ -1,25 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Item from '../Item/Item'
 import './ItemList.css'
 
 
-function ItemList({listProducts, bringProducts}) {
-
-  const [products, setProducts] = useState([])
-
+function ItemList({ listProducts }) {
+  const { categoryID } = useParams()
+  const [products, setProducts] = useState([...listProducts])
 
   useEffect( () => {
-    bringProducts(listProducts)
-     .then( products => {
-          console.log('carga correcta');
-          setProducts(products)
-      } )
-      .catch( err => {
-        console.log('error en la carga');
-        console.log(err)
-      })
-  }, [])
-
+    setProducts(listProducts)
+  }, [categoryID])
 
   return (
     <div className='item-list'>

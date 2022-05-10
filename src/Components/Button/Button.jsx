@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Button.css'
 
-function Button({boton}) {
+function Button({boton, id}) {
   return (
     <button className='button'>
-        {boton}
+        <Link to={`/Item/${id}`}>{boton}</Link>
     </button>
   )
 }
+
+
 
 export default Button

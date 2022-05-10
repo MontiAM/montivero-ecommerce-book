@@ -14,9 +14,9 @@ const Nav = () => {
             <IconShop/>
             <div className='nav__menu'>
                 <ul className='nav__list'>
-                    <NavItem href="#categories" link="Categorias"/>
-                    <NavItem href="#top20" link="Top20"/>
-                    <NavItem href="#contactos" link="Contactos"/>
+                    <NavItem link="J.K. Rowling"/>
+                    <NavItem link="R.R. Tolkien"/>
+                    <NavItem link="Contactos"/>
                 </ul>
             </div>
             <div className='nav__toggle'> 

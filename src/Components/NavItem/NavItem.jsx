@@ -1,12 +1,16 @@
 import React from 'react'
 import { FaAngleDown } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
-function NavItem({href, link}) {
+function NavItem({ link }) {
+
+  const linkTo = link.replace(/ /g,"");
+
   return (
     <>
       <li className='nav__item'>
-        <a href={href} className='nav_link'>{link}</a>
+        <Link to={`/category/:${linkTo}`} className='nav_link'>{link}</Link>
         <FaAngleDown className='nav__item-arrow'/>
       </li>
     </>
