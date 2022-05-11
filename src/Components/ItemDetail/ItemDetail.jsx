@@ -4,6 +4,12 @@ import './ItemDetail.css'
 
 function ItemDetail({productID}) {
 
+  const handlererOnAdd = (quantityToAdd) => {
+    setCount(quantityToAdd)
+  }
+
+  const [ count, setCount] = useState(0)
+
   const [ product, setProduct ] = useState(productID)
 
   return (
@@ -17,7 +23,7 @@ function ItemDetail({productID}) {
                 <p>{product.description}</p>
                 <h3>Precio: ${product.price}</h3>
             </div>    
-            <ItemCounter stock={product.stock}/>    
+            <ItemCounter stock={product.stock} ondAdd={handlererOnAdd}/>    
         </div>
     </div>
   )

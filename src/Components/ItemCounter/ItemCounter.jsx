@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaPlus, FaMinus } from "react-icons/fa";
 import './ItemCounter.css'
 
-function ItemCounter({stock}) {
+function ItemCounter({stock, onAdd}) {
     const [counter, setCounter] = useState(0)
     
     const handelersAdd = () => {
@@ -24,7 +24,7 @@ function ItemCounter({stock}) {
                 <p>{counter}</p>
                 <button className='button-counter' onClick={handelersAdd}><FaPlus className='icon'/></button>
             </div>
-            <button className='button-addCart'>Agregar al carrito</button>
+            <button onClick={() => onAdd(counter)} className='button-addCart'>Agregar al carrito</button>
         </div>
       </>
   )
