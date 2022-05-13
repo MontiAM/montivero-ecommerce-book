@@ -5,7 +5,7 @@ import './Button.css'
 function Button({boton, id}) {
   return (
     <button className='button'>
-        <Link to={`/Item/${id}`}>{boton}</Link>
+        <Link className='button-link' to={`/Item/${id}`}>{boton}</Link>
     </button>
   )
 }

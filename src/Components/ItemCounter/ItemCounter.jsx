@@ -16,6 +16,12 @@ function ItemCounter({stock, onAdd}) {
         }
     }
 
+    const handelerButton = () => {
+        console.log('Item agregado');
+        onAdd(counter);
+        setCounter(0)
+    }
+
   return (
       <>    
         <div className='item-handelers'>
@@ -24,7 +30,7 @@ function ItemCounter({stock, onAdd}) {
                 <p>{counter}</p>
                 <button className='button-counter' onClick={handelersAdd}><FaPlus className='icon'/></button>
             </div>
-            <button onClick={() => onAdd(counter)} className='button-addCart'>Agregar al carrito</button>
+            <button onClick={handelerButton} className='button-addCart'>Agregar al carrito</button>
         </div>
       </>
   )

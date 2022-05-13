@@ -15,7 +15,6 @@ function Item({product}) {
                 </div> 
             </div>
             <Button boton="Descripción" id={product.id}/>
-            <ItemCounter stock={product.stock}/>
         </div>
     </div>
   )

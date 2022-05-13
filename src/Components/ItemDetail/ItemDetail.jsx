@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ItemCounter from '../ItemCounter/ItemCounter'
 import './ItemDetail.css'
+import CartContext from '../../store/cart-context'
 
 function ItemDetail({productID}) {
-
-  const handlererOnAdd = (quantityToAdd) => {
-    setCount(quantityToAdd)
-  }
-
-  const [ count, setCount] = useState(0)
-
+  
+  const cartCtx = useContext(CartContext)
+  const [ quantity, setQuantity] = useState(0)
   const [ product, setProduct ] = useState(productID)
+
+  
+  const handlererOnAdd = (quantityToAdd) => {
+    setQuantity(quantityToAdd)
+    cartCtx.addItem(productID, quantityToAdd)
+  }
 
   return (
     <div className='ItemDetail'>
@@ -23,7 +26,7 @@ function ItemDetail({productID}) {
                 <p>{product.description}</p>
                 <h3>Precio: ${product.price}</h3>
             </div>    
-            <ItemCounter stock={product.stock} ondAdd={handlererOnAdd}/>    
+            <ItemCounter stock={product.stock} onAdd={handlererOnAdd}/>    
         </div>
     </div>
   )
