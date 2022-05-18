@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Nav.css';
 import { FaAlignJustify } from "react-icons/fa";
 import NavItem from "../NavItem/NavItem"
 import IconShop from "../IconShop/IconShop"
 import CardWidget from "../CardWidget/CardWidget"
+import CartContext from '../../store/cart-context';
 
 const Nav = () => {
 
-    let items = 0
+    const cartCtx = useContext(CartContext)
+    let items = cartCtx.totalCount()
     return (
     <>
         <nav className='nav'>

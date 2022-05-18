@@ -1,43 +1,69 @@
-import { createContext, useState } from 'react'
+import { createContext, useState} from 'react'
 
 const CartContext = createContext({
-    products: []
+    cartList: [],
+    isINCart: () => {},
+    addToCart: () => {},
+    cleanCart: () => {},
+    deleteByID: () => {},
+    totalCount: () => {},
+    totalPrice: () => {},
+    unitPerProducts: () => {}
+    
 });
+export default CartContext;
 
 
 export const CartContextProvider = ( {children}) => {
 
-    const [ itemList, setItemList ] = useState([])
-
-    const addItem = (item, quantity) => {
-        console.log(itemList);
-        item.quantity = quantity
-        const itemToAdd = item
-        setItemList(itemList.push(itemToAdd))
+    const [ cartList, setCartList ] = useState([]);
+    
+    const isINCart = (id) => {
+        return cartList.find( item => item.id === id ? true : false);
     }
 
-    const removeItem = (itemID) => {
-        setItemList(itemList.filter( p => p.id !== itemID ))
+    const addToCart = (item, quantity) => {
+        if (isINCart(item.id)){
+            setCartList(cartList.map( p => p.id === item.id ? {...p, quantity: p.quantity + quantity} : p));
+        }
+        else {
+            setCartList([...cartList, {...item, quantity: quantity}]);
+        }
     }
 
-    const clearItem = () => {
-        setItemList([])
+    const cleanCart = () => {
+        setCartList([]);
     }
 
-    const isInCart = (itemId) => {
-        return itemList.includes( p => p.id == itemId)
+    const deleteByID = (id) => {
+        setCartList(cartList.filter( p => p.id !== id));
+    }
+
+    const totalCount = () => {
+        return cartList.reduce( (ant, act) => ant + act.quantity, 0);
+    }
+
+    const totalPrice = () => {
+        return cartList.reduce( (ant, act) => ant + act.quantity * act.quantity, 0);
+    }
+
+    const unitPerProducts = (id) => {
+        return cartList.find( p => p.id === id).quantity;
     }
 
     return (
         <CartContext.Provider value={ {
-            products: itemList,
-            addItem,
-            removeItem
+            cartList,
+            isINCart,
+            addToCart,
+            cleanCart,
+            deleteByID,
+            totalCount,
+            totalPrice,
+            unitPerProducts
         }}>
             {children}
         </CartContext.Provider>
     )    
 }
 
-
-export default CartContext;

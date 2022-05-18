@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaPlus, FaMinus } from "react-icons/fa";
 import './ItemCounter.css'
 
-function ItemCounter({stock, onAdd}) {
+function ItemCounter({stock, onAdd, }) {
     const [counter, setCounter] = useState(0)
     
     const handelersAdd = () => {
@@ -17,7 +17,6 @@ function ItemCounter({stock, onAdd}) {
     }
 
     const handelerButton = () => {
-        console.log('Item agregado');
         onAdd(counter);
         setCounter(0)
     }

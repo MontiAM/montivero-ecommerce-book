@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import ItemCounter from '../ItemCounter/ItemCounter'
+import ButtonGoToCart from '../ButtonGoToCart/ButtonGoToCart'
 import './ItemDetail.css'
 import CartContext from '../../store/cart-context'
 
@@ -8,11 +9,10 @@ function ItemDetail({productID}) {
   const cartCtx = useContext(CartContext)
   const [ quantity, setQuantity] = useState(0)
   const [ product, setProduct ] = useState(productID)
-
   
   const handlererOnAdd = (quantityToAdd) => {
     setQuantity(quantityToAdd)
-    cartCtx.addItem(productID, quantityToAdd)
+    cartCtx.addToCart(productID, quantityToAdd)
   }
 
   return (
@@ -25,8 +25,10 @@ function ItemDetail({productID}) {
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
                 <h3>Precio: ${product.price}</h3>
-            </div>    
-            <ItemCounter stock={product.stock} onAdd={handlererOnAdd}/>    
+            </div>
+            {
+              quantity > 0 ? <ButtonGoToCart irA={'cart'} desc='carrito'/> : <ItemCounter stock={product.stock} onAdd={handlererOnAdd}/>    
+            }
         </div>
     </div>
   )
