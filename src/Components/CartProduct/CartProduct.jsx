@@ -11,10 +11,10 @@ function CartProduct({product}) {
         </div>
         <div className='CartProduct-contain'>
           <h2>{product.title}</h2>
-        </div>
-        <div className='CartProduct-totals'>
-          <h3>CANTIDAD: {product.quantity}</h3>
-          <h3>PRECIO: {product.price}</h3>
+          <div className='CartProduct-totals'>
+            <h3>CANTIDAD: {product.quantity}</h3>
+            <h3>PRECIO: {product.price}</h3>
+          </div>
         </div>
         <button onClick={ () => cartCtx.deleteByID(product.id)}>Borrar</button>
     </div>

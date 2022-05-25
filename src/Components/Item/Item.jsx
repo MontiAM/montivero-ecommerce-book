@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from '../Button/Button';
-import ItemCounter from '../ItemCounter/ItemCounter';
 import './Item.css'
 
 function Item({product}) {

@@ -1,21 +1,35 @@
 .CartProduct {
     margin-top: 10px;
-     width: 90%;
-     height: 150px;
-     border-radius: 30px;
-     border: 3px solid #000;
-     background-color: #fff;
-     padding: 20px;
-     box-shadow: 0px 0 10px 0 #000;
-     display: flex;
-     justify-content: space-around;
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    border: 3px solid #000;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0 10px 0 #000;
+    display: flex;
+    justify-content: space-between;
  }   
 
  .CartProduct-img {
-     height: 100px;
-     width: auto;
+    width: 150px;
+    height: 150px;
  }
 
  .CartProduct-img img {
-     object-fit: contain;
+    object-fit: contain;
+    width:100%;
+    height:100%;
  }
+
+.CartProduct-contain {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartProduct-totals {
+    margin-right: 10px;
+}
+
+

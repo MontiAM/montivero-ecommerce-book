@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 function NavItem({ link }) {
-
-  const linkTo = link.replace(/ /g,"");
-
   return (
     <>
       <li className='nav__item'>
-        <Link to={`/category/:${linkTo}`} className='nav_link'>{link}</Link>
+        <Link to={`/category/:${link}`} className='nav_link'>{link}</Link>
         <FaAngleDown className='nav__item-arrow'/>
       </li>
     </>

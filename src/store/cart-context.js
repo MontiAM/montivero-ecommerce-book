@@ -40,11 +40,11 @@ export const CartContextProvider = ( {children}) => {
     }
 
     const totalCount = () => {
-        return cartList.reduce( (ant, act) => ant + act.quantity, 0);
+        return  cartList.reduce( (ant, act) => ant + act.quantity, 0);
     }
 
     const totalPrice = () => {
-        return cartList.reduce( (ant, act) => ant + act.quantity * act.quantity, 0);
+        return cartList.reduce( (ant, act) => ant + act.quantity * act.price, 0);
     }
 
     const unitPerProducts = (id) => {

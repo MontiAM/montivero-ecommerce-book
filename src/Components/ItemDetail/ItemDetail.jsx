@@ -8,7 +8,6 @@ function ItemDetail({productID}) {
   
   const cartCtx = useContext(CartContext)
   const [ quantity, setQuantity] = useState(0)
-  const [ product, setProduct ] = useState(productID)
   
   const handlererOnAdd = (quantityToAdd) => {
     setQuantity(quantityToAdd)
@@ -18,16 +17,16 @@ function ItemDetail({productID}) {
   return (
     <div className='ItemDetail'>
         <div className='ItemDetail-section'>
-            <img src={product.src} alt={`imagen ${product.title}`} />
+            <img src={productID.src} alt={`imagen ${productID.title}`} />
         </div>
         <div className='ItemDetail-section info'>
             <div className='ItemDetail-section-data'>
-                <h2>{product.title}</h2>
-                <p>{product.description}</p>
-                <h3>Precio: ${product.price}</h3>
+                <h2>{productID.title}</h2>
+                <p>{productID.description}</p>
+                <h3>Precio: ${productID.price}</h3>
             </div>
             {
-              quantity > 0 ? <ButtonGoToCart irA={'cart'} desc='carrito'/> : <ItemCounter stock={product.stock} onAdd={handlererOnAdd}/>    
+              quantity > 0 ? <ButtonGoToCart irA={'cart'} desc='carrito'/> : <ItemCounter stock={productID.stock} onAdd={handlererOnAdd}/>    
             }
         </div>
     </div>
