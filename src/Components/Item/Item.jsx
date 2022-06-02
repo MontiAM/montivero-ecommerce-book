@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../Button/Button';
 import './Item.css'
 
+
 function Item({product}) {
 
   return (
@@ -10,8 +11,8 @@ function Item({product}) {
         <div className='item-contain'>
             <div>
                 <h1>{product.title}</h1>
-                <div className='item-price'>${product.price}
                 </div> 
+                <div className='item-price'>${product.price}
             </div>
             <Button boton="Descripción" id={product.id}/>
         </div>

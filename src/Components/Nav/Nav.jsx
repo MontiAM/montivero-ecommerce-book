@@ -4,9 +4,12 @@ import { FaAlignJustify } from "react-icons/fa";
 import NavItem from "../NavItem/NavItem"
 import IconShop from "../IconShop/IconShop"
 import CardWidget from "../CardWidget/CardWidget"
-import CartContext from '../../store/cart-context';
+import CartContext from '../../store/cart-context.jsx';
+import { getAllCategories } from '../../helpers/getProducts';
 
 const Nav = () => {
+
+    getAllCategories();
 
     const cartCtx = useContext(CartContext)
     let items = cartCtx.totalCount()
@@ -18,6 +21,7 @@ const Nav = () => {
                 <ul className='nav__list'>
                     <NavItem link="J.K. Rowling"/>
                     <NavItem link="R.R. Tolkien"/>
+                    <NavItem link='George R.R. Martin'/>
                     <NavItem link="Contactos"/>
                 </ul>
             </div>

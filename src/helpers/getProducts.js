@@ -27,9 +27,20 @@ export const getAllProducts = (category) => {
   }
 }
 
+export const getAllCategories = () => {
+  const products = ["George R.R. Martin"]
+  const categories = []
+  getAllProducts()
+    .then(snapshot =>  snapshot.docs.map( doc => {
+      products.push(doc.data())
+    }))
+  
+  console.log(categories);
+}
+
 export const getProductsID = (id) => {
   const productID = doc(db, 'items', id)
   return getDoc(productID)
 }
 
-
+// categories.indexOf(product.category) === product.category ? categories.push(product.category) : null

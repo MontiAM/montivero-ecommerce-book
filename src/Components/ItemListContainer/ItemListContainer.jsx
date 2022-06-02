@@ -1,8 +1,10 @@
+import React from 'react'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getAllProducts } from '../../helpers/getProducts'
+import { motion } from'framer-motion/dist/framer-motion'
 
 
 function ItemListContainer() {
@@ -21,11 +23,16 @@ function ItemListContainer() {
   }, [categoryID] )
 
   return (
-    <div className='items-list-container'>
+    <motion.div 
+      className='items-list-container'
+      initial={{ width: 0 }}
+      animate={{ width: '100%'}}
+      exit={{ x: window.innerWidth, transition: {duration: 0.1}}}
+    >
       <ItemList listProducts={products}/>
-    </div>
+    </motion.div>
   )
 }
 
 
-export default ItemListContainer
+export default ItemListContainer  

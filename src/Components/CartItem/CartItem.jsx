@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './CartItem.css'
 import ButtonGoToCart from '../ButtonGoToCart/ButtonGoToCart'
-import CartContext from '../../store/cart-context'
+import CartContext from '../../store/cart-context.jsx'
 import CartProduct from '../CartProduct/CartProduct'
 import CartTotales from '../CartTotales/CartTotales'
 
@@ -15,16 +15,18 @@ function CartItem() {
 
 
   return (
-    <div className='CartItem'>
-      {
-        cartCtx.cartList.length === 0 
-        ? <ButtonGoToCart irA={''} desc='listado'/>
-        : products.map( (product => <CartProduct product={product} key={product.id}/>))
-      }
-      {
-        cartCtx.cartList.length === 0 ? '' : <CartTotales totalCount={cartCtx.totalCount()} totalPrice={cartCtx.totalPrice()}/>
-      }
-      
+    <div className='Cart'>
+      <div className='CartItem'>
+        {
+          cartCtx.cartList.length === 0 
+          ? <ButtonGoToCart irA={''} desc='listado'/>
+          : products.map( (product => <CartProduct product={product} key={product.id}/>))
+        }
+        {
+          cartCtx.cartList.length === 0 ? '' : <CartTotales totalCount={cartCtx.totalCount()} totalPrice={cartCtx.totalPrice()}/>
+        }
+        
+      </div>
     </div>
   )
 }

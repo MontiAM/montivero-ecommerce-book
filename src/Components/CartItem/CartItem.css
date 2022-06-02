@@ -1,10 +1,12 @@
-.CartItem {
+.Cart {
     background-color: rgba(202, 188, 169, .5);
+    min-height: 100vh;
+    height: auto;
     margin-top: 100px;
-    width: 100%;
-    height: calc(100vh - 100px);
+}
+
+.CartItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
 }

@@ -27,3 +27,13 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.ItemDetail-section-data h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.ItemDetail-section-data p {
+    height: 250px;
+    overflow-y: scroll;
+}
