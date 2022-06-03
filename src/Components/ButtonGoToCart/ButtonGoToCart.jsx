@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './ButtonGoToCart.css'
 
-function ButtonGoToCart({irA, desc}) {
+function ButtonGoToCart({irA, desc, finish, checkout}) {
   return (
-    <Link to={`/${irA}`}><button className='button-addCart'>Ir al {desc}</button></Link>
+    <Link onClick={finish ? checkout : ''} to={`/${irA}`}><button className='button-addCart'>Ir al {desc}</button></Link>
   )
 }
 

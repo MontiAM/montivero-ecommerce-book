@@ -1,9 +1,8 @@
 .item-list {
-    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 100%; */
     box-sizing: content-box;
     padding-top: 20px;
 }

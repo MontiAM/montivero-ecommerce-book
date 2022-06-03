@@ -5,14 +5,15 @@ import NavItem from "../NavItem/NavItem"
 import IconShop from "../IconShop/IconShop"
 import CardWidget from "../CardWidget/CardWidget"
 import CartContext from '../../store/cart-context.jsx';
-import { getAllCategories } from '../../helpers/getProducts';
 
 const Nav = () => {
-
-    getAllCategories();
-
     const cartCtx = useContext(CartContext)
     let items = cartCtx.totalCount()
+
+    const toggleMenu = () => {
+        console.log('anda');
+    }
+
     return (
     <>
         <nav className='nav'>

@@ -4,6 +4,7 @@ import ButtonGoToCart from '../ButtonGoToCart/ButtonGoToCart'
 import CartContext from '../../store/cart-context.jsx'
 import CartProduct from '../CartProduct/CartProduct'
 import CartTotales from '../CartTotales/CartTotales'
+import ModalContainer from '../ModalContainer/ModalContainer'
 
 function CartItem() {
   const cartCtx = useContext(CartContext)
@@ -19,7 +20,7 @@ function CartItem() {
       <div className='CartItem'>
         {
           cartCtx.cartList.length === 0 
-          ? <ButtonGoToCart irA={''} desc='listado'/>
+          ? <ModalContainer text='Carrito sin contenido' content={<ButtonGoToCart irA={''} desc='listado'/>}/> 
           : products.map( (product => <CartProduct product={product} key={product.id}/>))
         }
         {

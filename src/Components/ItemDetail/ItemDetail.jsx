@@ -9,8 +9,12 @@ function ItemDetail({productID}) {
   const [ quantity, setQuantity] = useState(0)
   
   const handlererOnAdd = (quantityToAdd) => {
-    setQuantity(quantityToAdd)
-    cartCtx.addToCart(productID, quantityToAdd)
+    if (quantityToAdd > 0 ) {
+      setQuantity(quantityToAdd)
+      cartCtx.addToCart(productID, quantityToAdd)
+    } else {
+      alert('Debe agregar un monto mayor a 0')
+    }
   }
 
   const showGoToCart = () => {
