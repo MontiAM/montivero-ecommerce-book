@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import ButtonGoToCart from '../ButtonGoToCart/ButtonGoToCart'
 import './CartTotales.css'
 import CartContext from '../../store/cart-context'
+import { sendOrder } from '../../helpers/getProducts'
 
 function CartTotales({totalPrice, totalCount}) {
     const cartCtx = useContext(CartContext)
     const useCheckout = () => {
+        sendOrder(cartCtx.cartList, cartCtx.totalPrice())
         cartCtx.cleanCart()
     }
 

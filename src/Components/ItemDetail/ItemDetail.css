@@ -29,11 +29,21 @@
 }
 
 .ItemDetail-section-data h2 {
-    font-size: 25px;
+    font-size: 23px;
     text-align: center;
 }
 
 .ItemDetail-section-data p {
     height: 200px;
     overflow-y: scroll;
+}
+
+.ItemDetail-section-data p,
+.ItemDetail-section-data h2,
+.ItemDetail-section-data h3 {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+
 }

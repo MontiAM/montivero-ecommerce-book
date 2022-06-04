@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {collection, getDocs, getDoc, getFirestore, query, where, doc} from 'firebase/firestore'
+import {collection, getDocs, addDoc, getDoc, getFirestore, query, where, doc} from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCnR8dXxt0Vez6z2VSswoMi2BSD2onEmSs",
@@ -13,6 +13,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const itemCollection = collection(db, "items");
+const ordersCollection = collection(db, "orders")
 
 export const getAllProducts = (category) => {
   if (category === undefined) {
@@ -30,4 +31,24 @@ export const getAllProducts = (category) => {
 export const getProductsID = (id) => {
   const productID = doc(db, 'items', id)
   return getDoc(productID)
+}
+
+export const sendOrder = (products, totalPrice) => {
+  products.map( product => {
+    delete product.src;
+    delete product.category;
+    delete product.stock;
+    delete product.description
+  })
+  const order = {
+    buyer: { 
+      name: 'Agustin',
+      phone: '111',
+      email: 'agustin@email.com '
+    },
+    items: products,
+    total: totalPrice
+  }
+  addDoc(ordersCollection, order)
+    .then(({ id }) => console.log(id))
 }
