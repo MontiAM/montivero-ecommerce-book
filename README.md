@@ -1,3 +1,6 @@
+# Simulación de a aplicación
+![Alt Text](/src/img/app-gif.gif)
+
 # Primeros pasos con la aplicación Create React
 
 Este proyecto se inició con [create-react-app] (https://github.com/facebook/create-react-app).
