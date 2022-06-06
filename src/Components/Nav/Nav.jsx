@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './Nav.css';
 import { FaAlignJustify } from "react-icons/fa";
 import NavItem from "../NavItem/NavItem"
@@ -10,15 +10,29 @@ const Nav = () => {
     const cartCtx = useContext(CartContext)
     let items = cartCtx.totalCount()
 
+    const [toggle, setToggle ] = useState(false)
+    const [screen, setScreen ] = useState(window.innerWidth)
+
     const toggleMenu = () => {
-        console.log('anda');
+        setToggle(!toggle)
     }
+
+    useEffect( () => {
+        const changeWidth = () => {
+            setScreen(window.innerWidth)
+        }
+        window.addEventListener('resize', changeWidth)
+        return () => {
+            window.removeEventListener('resize', changeWidth)
+        }
+    }, [])
 
     return (
     <>
         <nav className='nav'>
             <IconShop/>
-            <div className='nav__menu'>
+            { (toggle || screen > 770) && (
+                <div className='nav__menu'>
                 <ul className='nav__list'>
                     <NavItem link="J.K. Rowling"/>
                     <NavItem link="R.R. Tolkien"/>
@@ -26,8 +40,9 @@ const Nav = () => {
                     <NavItem link="Contactos"/>
                 </ul>
             </div>
+            )}
             <div className='nav__toggle'> 
-                <a href="#"><FaAlignJustify/></a>
+                <button onClick={() => toggleMenu()}><FaAlignJustify/></button>
             </div>
             <CardWidget items={items}/>
         </nav>

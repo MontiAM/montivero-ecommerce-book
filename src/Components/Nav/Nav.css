@@ -59,9 +59,12 @@
     display: none;
 }
 
-.nav__toggle a{
+.nav__toggle button{
     color: #fff;
+    background-color: transparent;
+    border: 1px solid transparent;
     font-size: 40px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -71,12 +74,11 @@
     .nav__menu {
         position: fixed;
         top: 100px;
-        right: -100%;
+        right: 0;
         width: 80%;
         height: calc(100vh - 160px);
         padding: 30px;
         background-color: #4b352f;
-        transition: .5s; 
     }
 
     .nav__list {
