@@ -1,20 +1,15 @@
 *Esta aplicación forma parte del trabajo final del curso de REACT brindado por Coderhouse*
 
 <h1 align="center"> Tienda de libros</h1>
-<p align="center">![Alt Text](/src/img/app-gif.gif)</p> 
+
+![Alt Text](/src/img/app-gif.gif)
 
 ## Tabla de contenidos:
 ---
 - [Badges o escudos](#badges-o-escudos)
 - [Descripción y contexto](#descripción-y-contexto)
-- [Guía de usuario](#guía-de-usuario)
 - [Guía de instalación](#guía-de-instalación)
-- [Cómo contribuir](#cómo-contribuir)
-- [Código de conducta](#código-de-conducta)
-- [Autor/es](#autores)
-- [Información adicional](#información-adicional)
-- [Licencia](#licencia)
-- [Limitación de responsabilidades - Solo BID](#limitación-de-responsabilidades)
+- [Datos de autor](#datos-autor)
 
 ## Badges o escudo
 ---
@@ -40,6 +35,9 @@ Tambíen se inició [react-router-dom] para el manejo de rutas dentro del proyec
 ## Datos autor
 ---
 <b>Autor: </b>Montivero Marcio Agustín
+
 <b>Mail: </b>montivero.marcio@gmail.com
-<b>Linkedin: </b> [https://www.linkedin.com/in/marcio-montivero/]
-<b>Repositorio: </b>[https://github.com/MontiAM/MontiAM] 
+
+<b>Linkedin: </b>[https://www.linkedin.com/in/marcio-montivero/]
+
+<b>Repositorio: </b>[https://github.com/MontiAM/MontiAM]
